@@ -7,7 +7,7 @@ import java.time.LocalDateTime;
 import java.util.Objects;
 
 
-public class ItemResponseDTO {
+public class ItemResponseDTO extends ItemRequestDTO{
 
     private LocalDateTime createdAt;
     private Integer id;
