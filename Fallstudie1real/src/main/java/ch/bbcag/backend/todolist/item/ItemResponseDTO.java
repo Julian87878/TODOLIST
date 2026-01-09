@@ -4,6 +4,7 @@ package ch.bbcag.backend.todolist.item;
 import jakarta.persistence.Entity;
 
 import java.time.LocalDateTime;
+import java.util.Objects;
 
 
 public class ItemResponseDTO {
@@ -32,5 +33,15 @@ public class ItemResponseDTO {
         this.id = id;
     }
 
+    @Override
+    public boolean equals(Object o) {
+        if (o == null || getClass() != o.getClass()) return false;
+        ItemResponseDTO that = (ItemResponseDTO) o;
+        return Objects.equals(createdAt, that.createdAt) && Objects.equals(id, that.id);
+    }
 
+    @Override
+    public int hashCode() {
+        return Objects.hash(createdAt, id);
+    }
 }
